@@ -1,0 +1,9 @@
+sudo: requred
+services:
+    - docker
+
+before-install:
+    - docker build -t jrnjerin/docker-react -f Dockerfile.dev
+
+script:
+    - docker run jrnjerin/docker-react npm run test -- --coverage
